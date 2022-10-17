@@ -1,27 +1,27 @@
 {
   "id": "0000",
   "meta": {
-    "name": "colab_lungmask",
+    "name": "colab_totalsegmentator",
     "application_area": "Google CoLab",
     "task": "Segmentation",
-    "task_extended": "Lung segmentation - Google CoLab Notebook - Segmentation",
+    "task_extended": "Whole body segmentation",
     "data_type": "Image/CT scan",
-    "framework": "colab",
-    "colab_link": "https://colab.research.google.com/drive/1IrIIYVHIuq2oD6gXGNAuAqsYF9TcuhTy",
-    "github_link": "https://github.com/JoHof/lungmask"
+    "framework": "Google CoLab and PyTorch",
+    "colab_link": "https://github.com/modelhub-ai/colab_totalsegmentator/blob/main/totalseg_all_mwe.ipynb",
+    "github_link": "https://github.com/wasserth/TotalSegmentator"
   },
   "publication": {
-    "title": "Automatic lung segmentation in routine imaging is primarily a data diversity problem, not a methodology problem",
-    "source": "https://doi.org/10.1186/s41747-020-00173-2",
-    "year": 2020,
-    "authors": "Hofmanninger, J., Prayer, F., Pan, J., Röhrich, S., Prosch, H., & Langs, G.",
-    "abstract": "Background: Automated segmentation of anatomical structures is a crucial step in image analysis. For lung segmentation in computed tomography, a variety of approaches exists, involving sophisticated pipelines trained and validated on different datasets. However, the clinical applicability of these approaches across diseases remains limited. Methods: We compared four generic deep learning approaches trained on various datasets and two readily available lung segmentation algorithms. We performed evaluation on routine imaging data with more than six different disease patterns and three published data sets. Results: Using different deep learning approaches, mean Dice similarity coefficients (DSCs) on test datasets varied not over 0.02. When trained on a diverse routine dataset (n = 36), a standard approach (U-net) yields a higher DSC (0.97 ± 0.05) compared to training on public datasets such as the Lung Tissue Research Consortium (0.94 ± 0.13, p = 0.024) or Anatomy 3 (0.92 ± 0.15, p = 0.001). Trained on routine data (n = 231) covering multiple diseases, U-net compared to reference methods yields a DSC of 0.98 ± 0.03 versus 0.94 ± 0.12 (p = 0.024). Conclusions: The accuracy and reliability of lung segmentation algorithms on demanding cases primarily relies on the diversity of the training data, highlighting the importance of data diversity compared to model choice. Efforts in developing new datasets and providing trained models to the public are critical. By releasing the trained model under General Public License 3.0, we aim to foster research on lung diseases by providing a readily available tool for segmentation of pathological lungs.",
-    "url": "https://doi.org/10.1186/s41747-020-00173-2",
-    "google_scholar": "https://scholar.google.com/scholar?cites=70004818277158591&as_sdt=40000005&sciodt=0,22&hl=en",
-    "bibtex": "@article{hofmanninger2020automatic, title={Automatic lung segmentation in routine imaging is primarily a data diversity problem, not a methodology problem}, author={Hofmanninger, Johannes and Prayer, Forian and Pan, Jeanny and Rohrich, Sebastian and Prosch, Helmut and Langs, Georg}, journal={European Radiology Experimental}, volume={4}, number={1}, pages={1--13}, year={2020}, publisher={SpringerOpen}}"
+    "title": "TotalSegmentator: robust segmentation of 104 anatomical structures in CT images",
+    "source": "https://doi.org/10.48550/arXiv.2208.05868",
+    "year": 2022,
+    "authors": "Wasserthal, J., Meyer, M., Breit, H.C., Cyriac, J., Yang, S. and Segeroth, M.",
+    "abstract": "In this work we focus on automatic segmentation of multiple anatomical structures in (whole body) CT images. Many segmentation algorithms exist for this task. However, in most cases they suffer from 3 problems: 1. They are difficult to use (the code and data is not publicly available or difficult to use). 2. They do not generalize (often the training dataset was curated to only contain very clean images which do not reflect the image distribution found during clinical routine), 3. The algorithm can only segment one anatomical structure. For more structures several algorithms have to be used which increases the effort required to set up the system. In this work we publish a new dataset and segmentation toolkit which solves all three of these problems: In 1204 CT images we segmented 104 anatomical structures (27 organs, 59 bones, 10 muscles, 8 vessels) covering a majority of relevant classes for most use cases. We show an improved workflow for the creation of ground truth segmentations which speeds up the process by over 10x. The CT images were randomly sampled from clinical routine, thus representing a real world dataset which generalizes to clinical application. The dataset contains a wide range of different pathologies, scanners, sequences and sites. Finally, we train a segmentation algorithm on this new dataset. We call this algorithm TotalSegmentator and make it easily available as a pretrained python pip package (pip install totalsegmentator). Usage is as simple as TotalSegmentator -i ct.nii.gz -o seg and it works well for most CT images.",
+    "url": "https://doi.org/10.48550/arXiv.2208.05868",
+    "google_scholar": "https://scholar.google.com/scholar?cites=2693648639295449445&as_sdt=40000005&sciodt=0,22&hl=en",
+    "bibtex": "@article{wasserthal2022totalsegmentator, title={TotalSegmentator: robust segmentation of 104 anatomical structures in CT images}, author={Wasserthal, Jakob and Meyer, Manfred and Breit, Hanns-Christian and Cyriac, Joshy and Yang, Shan and Segeroth, Martin}, journal={arXiv preprint arXiv:2208.05868}, year={2022}}"
   },
   "model": {
-    "description": "EfficientNetB4",
+    "description": "nnUnet",
     "provenance": "",
     "architecture": "",
     "learning_type": "",
