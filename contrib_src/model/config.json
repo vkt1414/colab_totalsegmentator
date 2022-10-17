@@ -23,7 +23,7 @@
   "model": {
     "description": "TotalSegmentator is a tool for the segmentation of 104 classes in CT images and was trained using a wide range of different CR images from several participating institutions.",
     "provenance": "",
-    "architecture": "",
+    "architecture": "pyTorch, nnUnet",
     "learning_type": "",
     "format": "",
     "io": {
